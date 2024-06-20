@@ -23,3 +23,6 @@ sudo systemctl restart initiad
 sudo journalctl -u initiad.service -f --no-hostname -o cat
 
 ```
+
+
+Core Node ekibine teşekkürler...
