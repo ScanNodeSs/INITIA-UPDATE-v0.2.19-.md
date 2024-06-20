@@ -1,32 +1,25 @@
 # initia-UPDATE.md
 
 ```shell
+systemctl stop initiad
+cd $HOME
 rm -rf initia
-```
-
-```shell
 git clone https: //github.com/initia-labs/initia.git
-```
-
-```shell
 cd initia
-```
-
-```shell
 git checkout v0.2.19
-
-```
-```shell
 make build
-
-```
-```shell
-sudo mv build/initiad $(which initiad)
-
+./build/initiad version
 ```
 
 ```shell
+mv /root/initia/build/initiad $HOME/.initia/cosmovisor/genesis/bin/
 
-sudo systemctl restart initiad.service
+```
+
+```shell
+
+sudo systemctl daemon-reload
+sudo systemctl restart initiad
+sudo journalctl -u initiad.service -f --no-hostname -o cat
 
 ```
